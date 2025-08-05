@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts and Encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theorems by amsthm package
+% See https://ftp.yz.yamagata-u.ac.jp/pub/CTAN/macros/latex/required/amscls/doc/amsthdoc.pdf.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newtheoremstyle{mystyle}%         % Name
+%   {18pt}%                                     % Space above
+%   {18pt}%                                     % Space below
+%   {\normalfont}%                          % Body font
+%   {}%                                     % Indent amount
+%   {\bfseries}%                            % Theorem head font
+%   {.}%                                    % Punctuation after theorem head
+%   {6pt}%                                    % Space after theorem head, ' ', or \newline
+%   {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}%
+% \theoremstyle{mystyle}
+
+\theoremstyle{definition}
+\newtheorem{Thm}{定理}
+\newtheorem{Lem}[Thm]{補題}
+\newtheorem{Prop}[Thm]{命題}
+\newtheorem{Cor}[Thm]{系}
+\newtheorem{Ass}[Thm]{仮定}
+\newtheorem{Conj}[Thm]{予想}
+\newtheorem{Def}[Thm]{定義}
+\newtheorem{Rem}[Thm]{注}
+\newtheorem{Eg}[Thm]{例}
+\newtheorem{Egprob}[Thm]{例題}
+\newtheorem{Prac}{練習}
+\newtheorem{Prob}{問}
+\newtheorem{Ex}{演習}
+\newtheorem{Spprob}{特別課題}
+
+\newtheorem*{Thm*}{定理}
+\newtheorem*{Lem*}{補題}
+\newtheorem*{Prop*}{命題}
+\newtheorem*{Cor*}{系}
+\newtheorem*{Ass*}{仮定}
+\newtheorem*{Conj*}{予想}
+\newtheorem*{Def*}{定義}
+\newtheorem*{Rem*}{注}
+\newtheorem*{Eg*}{例}
+\newtheorem*{Egprob*}{例題}
+\newtheorem*{Prac*}{練習}
+\newtheorem*{Prob*}{問}
+\newtheorem*{Ex*}{演習}
+\newtheorem*{Spprob*}{特別課題}
+
+\renewcommand{\proofname}{証明}
+\newenvironment{solution}{\begin{proof}[解]}{\end{proof}}
+
+% 証明の部分をイタリックにせず，太字にする．
+% 日本語しか書かないなら
+% \renewcommand{\proofname}{\textbf{証明}}
+% でよいが，それだと \begin{proof}[hoge] でhogeに数字やアルファベットなどを含むときはうまくいかない．
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+\pushQED{\qed}%
+\normalfont \topsep1\p@\@plus1\p@\relax
+\trivlist
+\item\relax
+% {\itshape
+{\bfseries
+#1}\hspace\labelsep\ignorespaces
+}{%
+\popQED\endtrivlist\@endpefalse
+}
+\makeatother

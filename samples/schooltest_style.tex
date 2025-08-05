@@ -1,0 +1,244 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{mathrsfs}
+\usepackage{mathtools} % \coloneqq,\mathtoolsset
+\usepackage{mleftright}
+\usepackage[dvipdfmx]{graphicx,xcolor}
+\usepackage[nobreak]{cite} % no break for citation
+\usepackage{ulem}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{float} % for figure
+\usepackage{wrapfig}% must be after float package.
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{fancybox}
+\usepackage{ascmac}
+\usepackage[breakable]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{intersections,calc,arrows.meta,patterns,angles}
+% \usepackage[dvipdfmx,%
+%  bookmarks=true,%
+%  bookmarksdepth=3,%
+%  bookmarksnumbered=true,%
+%  colorlinks=false,%
+%  setpagesize=false,%
+%  pdftitle={},%
+%  pdfsubject={},%
+%  pdfauthor={},%
+%  pdfkeywords={}]{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts and Encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+% \usepackage{newtxtext,newtxmath} % times
+\usepackage{lmodern} % Latin Modern
+\usepackage{bm} % must be loaded after font change.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\everymath{\displaystyle}
+\allowdisplaybreaks[1]
+
+% Equation number
+% \numberwithin{equation}{section}
+\mathtoolsset{showonlyrefs=true}
+\renewcommand{\theequation}{\text{eq.} \arabic{equation}}
+
+% Enumi
+% http://www.texnia.com/archive/enumitem.pdf
+\usepackage[inline]{enumitem}
+\renewcommand{\theenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumii}{(\roman{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\setlist{leftmargin=0.5zw}
+\setlist[1]{leftmargin=*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aliases
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Math operator
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+%%% limit type
+\DeclareMathOperator*{\argmin}{arg~min}
+\DeclareMathOperator*{\argmax}{arg~max}
+\DeclareMathOperator*{\esssup}{ess~sup}
+\DeclareMathOperator*{\essinf}{ess~inf}
+\DeclareMathOperator*{\argm}{Arg}
+%%% log type
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Supp}{Supp}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Det}{Det}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\corank}{corank}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Coker}{Coker}
+\DeclareMathOperator{\id}{id}
+\newcommand{\eps}{\ensuremath{\varepsilon}}
+\newcommand{\up}{\ensuremath{\uparrow}}
+\newcommand{\down}{\ensuremath{\downarrow}}
+\newcommand{\setmid}[2]{\left\{ #1 \mathrel{} \middle| \mathrel{} #2 \right\}} % set
+\renewcommand{\le}{\leqq}
+\renewcommand{\ge}{\geqq}
+
+% for geometry and vector
+% for geometry and vector
+\newcommand{\vect}[1]{\overrightarrow{\text{#1}}}
+\newcommand{\para}{\setlength{\unitlength}{1pt}\thinlines\begin{picture}(12, 12)\put(0,0){/}\put(2,0){/}\end{picture}}
+
+% for probability
+\newcommand{\indep}{\mathop{\rotatebox[origin=a]{90}{$ \models $}}} % independent
+\newcommand{\laweqq}{\stackrel{\mathrm{law}}{=}}
+\newcommand{\lawto}{\stackrel{\mathrm{law}}{\longrightarrow}}
+\newcommand{\deqq}{\stackrel{\mathrm{d}}{=}}
+\newcommand{\dto}{\stackrel{\mathrm{d}}{\longrightarrow}}
+\newcommand{\wto}{\stackrel{\mathrm{w}}{\longrightarrow}}
+\newcommand{\fdto}{\stackrel{\mathrm{f.d.}}{\longrightarrow}}
+\newcommand{\perm}[2]{{}_{#1}\mathrm{P}_{#2}}
+\newcommand{\comb}[2]{{}_{#1}\mathrm{C}_{#2}}
+\newcommand{\hcomb}[2]{{}_{#1}\mathrm{H}_{#2}}
+
+% Bracket
+% required mathtools
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\rbra}{(}{)}
+\DeclarePairedDelimiter{\cbra}{\{}{\}}
+\DeclarePairedDelimiter{\sbra}{[}{]}
+\DeclarePairedDelimiter{\abra}{\langle}{\rangle}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+
+% Alphabet
+\newcommand{\bA}{\ensuremath{\mathbb{A}}}
+\newcommand{\bB}{\ensuremath{\mathbb{B}}}
+\newcommand{\bC}{\ensuremath{\mathbb{C}}}
+\newcommand{\bD}{\ensuremath{\mathbb{D}}}
+\newcommand{\bE}{\ensuremath{\mathbb{E}}}
+\newcommand{\bF}{\ensuremath{\mathbb{F}}}
+\newcommand{\bG}{\ensuremath{\mathbb{G}}}
+\newcommand{\bH}{\ensuremath{\mathbb{H}}}
+\newcommand{\bI}{\ensuremath{\mathbb{I}}}
+\newcommand{\bJ}{\ensuremath{\mathbb{J}}}
+\newcommand{\bK}{\ensuremath{\mathbb{K}}}
+\newcommand{\bL}{\ensuremath{\mathbb{L}}}
+\newcommand{\bM}{\ensuremath{\mathbb{M}}}
+\newcommand{\bN}{\ensuremath{\mathbb{N}}}
+\newcommand{\bO}{\ensuremath{\mathbb{O}}}
+\newcommand{\bP}{\ensuremath{\mathbb{P}}}
+\newcommand{\bQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\bR}{\ensuremath{\mathbb{R}}}
+\newcommand{\bS}{\ensuremath{\mathbb{S}}}
+\newcommand{\bT}{\ensuremath{\mathbb{T}}}
+\newcommand{\bU}{\ensuremath{\mathbb{U}}}
+\newcommand{\bV}{\ensuremath{\mathbb{V}}}
+\newcommand{\bW}{\ensuremath{\mathbb{W}}}
+\newcommand{\bX}{\ensuremath{\mathbb{X}}}
+\newcommand{\bY}{\ensuremath{\mathbb{Y}}}
+\newcommand{\bZ}{\ensuremath{\mathbb{Z}}}
+
+\newcommand{\bbA}{\ensuremath{\mathbf{A}}}
+\newcommand{\bbB}{\ensuremath{\mathbf{B}}}
+\newcommand{\bbC}{\ensuremath{\mathbf{C}}}
+\newcommand{\bbD}{\ensuremath{\mathbf{D}}}
+\newcommand{\bbE}{\ensuremath{\mathbf{E}}}
+\newcommand{\bbF}{\ensuremath{\mathbf{F}}}
+\newcommand{\bbG}{\ensuremath{\mathbf{G}}}
+\newcommand{\bbH}{\ensuremath{\mathbf{H}}}
+\newcommand{\bbI}{\ensuremath{\mathbf{I}}}
+\newcommand{\bbJ}{\ensuremath{\mathbf{J}}}
+\newcommand{\bbK}{\ensuremath{\mathbf{K}}}
+\newcommand{\bbL}{\ensuremath{\mathbf{L}}}
+\newcommand{\bbM}{\ensuremath{\mathbf{M}}}
+\newcommand{\bbN}{\ensuremath{\mathbf{N}}}
+\newcommand{\bbO}{\ensuremath{\mathbf{O}}}
+\newcommand{\bbP}{\ensuremath{\mathbf{P}}}
+\newcommand{\bbQ}{\ensuremath{\mathbf{Q}}}
+\newcommand{\bbR}{\ensuremath{\mathbf{R}}}
+\newcommand{\bbS}{\ensuremath{\mathbf{S}}}
+\newcommand{\bbT}{\ensuremath{\mathbf{T}}}
+\newcommand{\bbU}{\ensuremath{\mathbf{U}}}
+\newcommand{\bbV}{\ensuremath{\mathbf{V}}}
+\newcommand{\bbW}{\ensuremath{\mathbf{W}}}
+\newcommand{\bbX}{\ensuremath{\mathbf{X}}}
+\newcommand{\bbY}{\ensuremath{\mathbf{Y}}}
+\newcommand{\bbZ}{\ensuremath{\mathbf{Z}}}
+
+\newcommand{\cA}{\ensuremath{\mathcal{A}}}
+\newcommand{\cB}{\ensuremath{\mathcal{B}}}
+\newcommand{\cC}{\ensuremath{\mathcal{C}}}
+\newcommand{\cD}{\ensuremath{\mathcal{D}}}
+\newcommand{\cE}{\ensuremath{\mathcal{E}}}
+\newcommand{\cF}{\ensuremath{\mathcal{F}}}
+\newcommand{\cG}{\ensuremath{\mathcal{G}}}
+\newcommand{\cH}{\ensuremath{\mathcal{H}}}
+\newcommand{\cI}{\ensuremath{\mathcal{I}}}
+\newcommand{\cJ}{\ensuremath{\mathcal{J}}}
+\newcommand{\cK}{\ensuremath{\mathcal{K}}}
+\newcommand{\cL}{\ensuremath{\mathcal{L}}}
+\newcommand{\cM}{\ensuremath{\mathcal{M}}}
+\newcommand{\cN}{\ensuremath{\mathcal{N}}}
+\newcommand{\cO}{\ensuremath{\mathcal{O}}}
+\newcommand{\cP}{\ensuremath{\mathcal{P}}}
+\newcommand{\cQ}{\ensuremath{\mathcal{Q}}}
+\newcommand{\cR}{\ensuremath{\mathcal{R}}}
+\newcommand{\cS}{\ensuremath{\mathcal{S}}}
+\newcommand{\cT}{\ensuremath{\mathcal{T}}}
+\newcommand{\cU}{\ensuremath{\mathcal{U}}}
+\newcommand{\cV}{\ensuremath{\mathcal{V}}}
+\newcommand{\cW}{\ensuremath{\mathcal{W}}}
+\newcommand{\cX}{\ensuremath{\mathcal{X}}}
+\newcommand{\cY}{\ensuremath{\mathcal{Y}}}
+\newcommand{\cZ}{\ensuremath{\mathcal{Z}}}
+
+\newcommand{\sA}{\ensuremath{\mathscr{A}}}
+\newcommand{\sB}{\ensuremath{\mathscr{B}}}
+\newcommand{\sC}{\ensuremath{\mathscr{C}}}
+\newcommand{\sD}{\ensuremath{\mathscr{D}}}
+\newcommand{\sE}{\ensuremath{\mathscr{E}}}
+\newcommand{\sF}{\ensuremath{\mathscr{F}}}
+\newcommand{\sG}{\ensuremath{\mathscr{G}}}
+\newcommand{\sH}{\ensuremath{\mathscr{H}}}
+\newcommand{\sI}{\ensuremath{\mathscr{I}}}
+\newcommand{\sJ}{\ensuremath{\mathscr{J}}}
+\newcommand{\sK}{\ensuremath{\mathscr{K}}}
+\newcommand{\sL}{\ensuremath{\mathscr{L}}}
+\newcommand{\sM}{\ensuremath{\mathscr{M}}}
+\newcommand{\sN}{\ensuremath{\mathscr{N}}}
+\newcommand{\sO}{\ensuremath{\mathscr{O}}}
+\newcommand{\sP}{\ensuremath{\mathscr{P}}}
+\newcommand{\sQ}{\ensuremath{\mathscr{Q}}}
+\newcommand{\sR}{\ensuremath{\mathscr{R}}}
+\newcommand{\sS}{\ensuremath{\mathscr{S}}}
+\newcommand{\sT}{\ensuremath{\mathscr{T}}}
+\newcommand{\sU}{\ensuremath{\mathscr{U}}}
+\newcommand{\sV}{\ensuremath{\mathscr{V}}}
+\newcommand{\sW}{\ensuremath{\mathscr{W}}}
+\newcommand{\sX}{\ensuremath{\mathscr{X}}}
+\newcommand{\sY}{\ensuremath{\mathscr{Y}}}
+\newcommand{\sZ}{\ensuremath{\mathscr{Z}}}

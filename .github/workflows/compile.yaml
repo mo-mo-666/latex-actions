@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
 
       - name: set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -37,7 +39,7 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
-          name: compiled-pdf
+          name: compiled
           path: |
             ${{ github.workspace }}/$(basename $FILE_PATH .tex).pdf
             # ${{ github.workspace }}/$(basename $FILE_PATH .tex).aux
