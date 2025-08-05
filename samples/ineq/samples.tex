@@ -4,23 +4,6 @@
 \input{../schooltest_style}
 \input{../schooltest_style_ja}
 
-\setlength{\columnseprule}{0.4pt}
-\setlength{\mathindent}{20pt}
-\pagestyle{empty}
-\setlength{\headheight}{2zw}
-\setlength{\headsep}{2zw}
-\makeatletter
-\def\ps@exam{%
-  \let\@oddfoot\@empty
-  \def\@oddhead{\mbox{\Large%
-  \textbf{中学●年 数学小テスト}}%
-  （10分）
-  \hspace{8zw}\hfill
-  中学●年\underline{\hspace{3zw}}組\underline{\hspace{4zw}}番
-  \hspace{1zw}氏名\underline{\hspace{18zw}}}}
-\makeatother
-\pagestyle{exam}
-\newcommand{\ansbox}[1]{\smash{\raisebox{-15pt}{{\Large #1}}}}
 \begin{document}
 \setlength{\abovedisplayskip}{5pt}%align等の上部のマージン
 \setlength{\belowdisplayskip}{4pt}

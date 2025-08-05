@@ -41,10 +41,5 @@ jobs:
         with:
           name: compiled
           path: |
-            ${{ github.workspace }}/$(basename $FILE_PATH .tex).pdf
-            # ${{ github.workspace }}/$(basename $FILE_PATH .tex).aux
-            ${{ github.workspace }}/$(basename $FILE_PATH .tex).log
-            # ${{ github.workspace }}/$(basename $FILE_PATH .tex).out
-            # ${{ github.workspace }}/$(basename $FILE_PATH .tex).toc
-            # ${{ github.workspace }}/$(basename $FILE_PATH .tex).fls
-            # ${{ github.workspace }}/$(basename $FILE_PATH .tex).fdb_latexmk
+            ${{ github.workspace }}/$(dirname $FILE_PATH)/$(basename $FILE_PATH .tex).pdf
+            ${{ github.workspace }}/$(dirname $FILE_PATH)/$(basename $FILE_PATH .tex).log
