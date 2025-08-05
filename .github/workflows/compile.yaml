@@ -34,7 +34,7 @@ jobs:
             -v ${{ github.workspace }}:/workdir \
             -w /workdir/$(dirname $FILE_PATH) \
             $IMAGE_NAME \
-            sh -c "latexmk -r /workdir/.latexmkrc $(basename $FILE_PATH)"
+            sh -c "latexmk -f -r /workdir/.latexmkrc $(basename $FILE_PATH)"
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
