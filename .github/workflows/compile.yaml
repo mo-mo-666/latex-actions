@@ -32,9 +32,9 @@ jobs:
         run: |
           docker run --rm \
             -v ${{ github.workspace }}:/workdir \
-            -w /workdir \
+            -w /workdir/$(dirname $FILE_PATH) \
             $IMAGE_NAME \
-            sh -c "latexmk $FILE_PATH"
+            sh -c "latexmk -r /workdir/.latexmkrc $(basename $FILE_PATH)"
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
