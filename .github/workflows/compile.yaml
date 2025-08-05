@@ -34,7 +34,7 @@ jobs:
             -v ${{ github.workspace }}:/workdir \
             -w /workdir \
             $IMAGE_NAME \
-            sh -c "latexmk -pdf -interaction=nonstopmode -file-line-error $FILE_PATH"
+            sh -c "latexmk $FILE_PATH"
 
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
