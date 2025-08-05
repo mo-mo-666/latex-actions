@@ -31,8 +31,8 @@ jobs:
       - name: Compile LaTeX document
         run: |
           docker run --rm \
-            -v ${{ github.workspace }}:/workspace \
-            -w /workspace \
+            -v ${{ github.workspace }}:/workdir \
+            -w /workdir \
             $IMAGE_NAME \
             sh -c "latexmk -pdf -interaction=nonstopmode -file-line-error $FILE_PATH"
 
