@@ -30,11 +30,12 @@ jobs:
 
       - name: Compile LaTeX document
         run: |
+          mkdir -p ${{ github.workspace }}/gh-output
           docker run --rm \
             -v ${{ github.workspace }}:/workdir \
             -w /workdir/$(dirname $FILE_PATH) \
             $IMAGE_NAME \
-            sh -c "latexmk -f -r /workdir/.latexmkrc $(basename $FILE_PATH)"
+            sh -c "latexmk -f -r /workdir/.latexmkrc -output-directory=/workdir/gh-output $(basename $FILE_PATH)"
         continue-on-error: true # skip error of Failure to make 'samples.dvi'
 
       - name: Upload PDF file
@@ -42,5 +43,5 @@ jobs:
         with:
           name: compiled
           path: |
-            ${{ github.workspace }}/$(dirname $FILE_PATH)/$(basename $FILE_PATH .tex).pdf
-            ${{ github.workspace }}/$(dirname $FILE_PATH)/$(basename $FILE_PATH .tex).log
+            ${{ github.workspace }}/gh-output/$(basename $FILE_PATH .tex).pdf
+            ${{ github.workspace }}/gh-output/$(basename $FILE_PATH .tex).log
