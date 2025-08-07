@@ -43,5 +43,4 @@ jobs:
         with:
           name: compiled
           path: |
-            ${{ github.workspace }}/gh-output/$(basename $FILE_PATH .tex).pdf
-            ${{ github.workspace }}/gh-output/$(basename $FILE_PATH .tex).log
+            ${{ github.workspace }}/gh-output
